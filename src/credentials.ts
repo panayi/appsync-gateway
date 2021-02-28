@@ -37,7 +37,7 @@ export class IAMCredentialsStrategy implements CredentialsStrategy {
     key = key || env.AWS_ACCESS_KEY_ID || '' ;
     accessKey = accessKey || env.AWS_SECRET_ACCESS_KEY || '';
     session = session || env.AWS_SESSION_TOKEN || '';
-    region = session || env.AWS_REGION || env.REGION;
+    region = region || env.AWS_REGION || env.REGION;
 
     this.credentials = new AWS.Credentials(
       key,
